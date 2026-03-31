@@ -53,6 +53,9 @@ ipython_config.py
 */models/*.joblib
 */models/*.h5
 */models/*.pt
+*/models/*.keras
+*.pkl
+*.joblib
 
 # Relatórios gerados automaticamente
 */reports/*.pdf
@@ -78,6 +81,11 @@ Thumbs.db
 # Logs
 *.log
 logs/
+
+# Bancos de dados locais
+*.db
+*.sqlite
+*.sqlite3
 
 # Streamlit
 .streamlit/secrets.toml
