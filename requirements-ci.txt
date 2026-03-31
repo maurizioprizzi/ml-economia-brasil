@@ -1,0 +1,23 @@
+# ============================================================
+# requirements-ci.txt  ←  fica na RAIZ do repositório
+#
+# Usado exclusivamente pelo GitHub Actions (.github/workflows/ci.yml).
+# Instala apenas o mínimo para verificar qualidade de código e
+# rodar testes unitários — sem TensorFlow, Keras, XGBoost,
+# Streamlit, EconML ou qualquer outro pacote pesado.
+#
+# Para desenvolvimento local, use o requirements.txt
+# dentro de cada pasta de projeto:
+#   pip install -r projeto-01-ipca/requirements.txt
+# ============================================================
+
+# Ferramentas de qualidade de código
+black>=24.0.0       # formatação automática
+flake8>=7.0.0       # lint
+pytest>=8.2.0       # testes unitários
+
+# Dependências mínimas para que os imports do src/ não quebrem
+requests>=2.31.0
+pandas>=2.2.0
+numpy>=1.26.0
+scikit-learn>=1.5.0
