@@ -1,52 +1,74 @@
 # ============================================================
 # Projeto 01 — Previsão do IPCA com Machine Learning
-# Dependências Python
+# Dependências Python (instalação local completa)
+#
+# Para instalar tudo de uma vez:
+#   pip install -r requirements.txt
+#
+# Para instalar só o necessário para começar (Notebooks 01–03):
+#   pip install -r requirements.txt --no-deps
+#   pip install requests pandas numpy sidrapy python-bcb \
+#               matplotlib seaborn jupyter ipykernel
+#
+# Nota: o CI usa requirements-ci.txt (raiz do repo), que é
+# uma versão leve sem TensorFlow/Streamlit/etc.
 # ============================================================
 
-# --- Coleta de dados ---
+# ── FASE 1 — Notebooks 01 a 03: coleta e exploração ────────
+
+# Coleta de dados via APIs públicas brasileiras
 requests>=2.31.0
-pandas>=2.0.0
-numpy>=1.24.0
-sidrapy>=0.1.5          # API do IBGE (SIDRA)
+pandas>=2.2.0
+numpy>=1.26.0
+sidrapy>=0.1.5          # API do IBGE (SIDRA/SIDRAPY)
 python-bcb>=0.2.0       # API do Banco Central do Brasil (SGS)
 ipeadatapy>=0.1.8       # API do Ipeadata
 
-# --- Processamento ---
-scipy>=1.11.0
-pyarrow>=12.0.0         # Leitura/escrita eficiente de parquet
+# Processamento e armazenamento
+scipy>=1.13.0
+pyarrow>=16.0.0         # Salvar/ler arquivos .parquet (eficiente)
 
-# --- Análise de séries temporais ---
-statsmodels>=0.14.0     # ARIMA, testes de estacionariedade
-pmdarima>=2.0.3         # Auto-ARIMA
-arch>=6.2.0             # Modelos GARCH
+# Visualização (usada desde o Notebook 02)
+matplotlib>=3.9.0
+seaborn>=0.13.0
+plotly>=5.22.0
 
-# --- Machine Learning ---
-scikit-learn>=1.3.0
-xgboost>=1.7.0
-lightgbm>=4.0.0
-
-# --- Deep Learning ---
-tensorflow>=2.13.0      # LSTM
-
-# --- Explicabilidade (XAI) ---
-shap>=0.43.0
-
-# --- Visualização ---
-matplotlib>=3.7.0
-seaborn>=0.12.0
-plotly>=5.15.0
-
-# --- Notebooks ---
+# Notebooks interativos
 jupyter>=1.0.0
-ipykernel>=6.25.0
+ipykernel>=6.29.0
 ipywidgets>=8.1.0
 
-# --- Qualidade de código ---
-black>=23.0.0
-flake8>=6.0.0
-pytest>=7.4.0
+# ── FASE 2 — Notebooks 04 a 05: modelagem ──────────────────
 
-# --- Deploy ---
-streamlit>=1.26.0
-fastapi>=0.100.0
-uvicorn>=0.23.0
+# Séries temporais tradicionais (baseline)
+statsmodels>=0.14.0     # ARIMA, VAR, testes de estacionariedade (ADF, KPSS)
+pmdarima>=2.0.4         # Auto-ARIMA: encontra o melhor ARIMA automaticamente
+arch>=7.0.0             # Modelos de volatilidade GARCH (opcional)
+
+# Machine Learning
+scikit-learn>=1.5.0
+xgboost>=2.1.0
+lightgbm>=4.4.0
+
+# ── FASE 3 — Notebook 06: deep learning (LSTM) ─────────────
+
+# Keras standalone (mais leve e moderno que tensorflow direto)
+# Suporta backends TensorFlow, JAX ou PyTorch
+keras>=3.4.0
+tensorflow>=2.16.0      # Backend padrão para o Keras 3
+
+# ── FASE 4 — Notebooks 07: explicabilidade XAI ─────────────
+
+shap>=0.45.0            # SHAP values: explica qualquer modelo de ML
+
+# ── FASE 5 — App e deploy ───────────────────────────────────
+
+streamlit>=1.36.0       # Dashboard interativo (app/)
+fastapi>=0.111.0        # API REST para servir o modelo
+uvicorn>=0.30.0         # Servidor ASGI para o FastAPI
+
+# ── Qualidade de código (desenvolvimento local) ─────────────
+
+black>=24.0.0           # Formatação automática de código
+flake8>=7.0.0           # Lint: detecta erros e más práticas
+pytest>=8.2.0           # Testes unitários
