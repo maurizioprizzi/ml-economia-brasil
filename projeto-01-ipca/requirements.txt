@@ -1,0 +1,52 @@
+# ============================================================
+# Projeto 01 — Previsão do IPCA com Machine Learning
+# Dependências Python
+# ============================================================
+
+# --- Coleta de dados ---
+requests>=2.31.0
+pandas>=2.0.0
+numpy>=1.24.0
+sidrapy>=0.1.5          # API do IBGE (SIDRA)
+python-bcb>=0.2.0       # API do Banco Central do Brasil (SGS)
+ipeadatapy>=0.1.8       # API do Ipeadata
+
+# --- Processamento ---
+scipy>=1.11.0
+pyarrow>=12.0.0         # Leitura/escrita eficiente de parquet
+
+# --- Análise de séries temporais ---
+statsmodels>=0.14.0     # ARIMA, testes de estacionariedade
+pmdarima>=2.0.3         # Auto-ARIMA
+arch>=6.2.0             # Modelos GARCH
+
+# --- Machine Learning ---
+scikit-learn>=1.3.0
+xgboost>=1.7.0
+lightgbm>=4.0.0
+
+# --- Deep Learning ---
+tensorflow>=2.13.0      # LSTM
+
+# --- Explicabilidade (XAI) ---
+shap>=0.43.0
+
+# --- Visualização ---
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.15.0
+
+# --- Notebooks ---
+jupyter>=1.0.0
+ipykernel>=6.25.0
+ipywidgets>=8.1.0
+
+# --- Qualidade de código ---
+black>=23.0.0
+flake8>=6.0.0
+pytest>=7.4.0
+
+# --- Deploy ---
+streamlit>=1.26.0
+fastapi>=0.100.0
+uvicorn>=0.23.0

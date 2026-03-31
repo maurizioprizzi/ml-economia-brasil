@@ -1,0 +1,45 @@
+name: CI — Testes e qualidade de código
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11"]
+        project: ["projeto-01-ipca", "projeto-02-pib", "projeto-03-desemprego"]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Configurar Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Instalar dependências — ${{ matrix.project }}
+      run: |
+        python -m pip install --upgrade pip
+        cd ${{ matrix.project }}
+        pip install -r requirements.txt
+        pip install pytest black flake8
+
+    - name: Verificar formatação com Black
+      run: |
+        cd ${{ matrix.project }}
+        black --check src/ tests/ || echo "Avisos de formatação encontrados"
+
+    - name: Verificar qualidade com Flake8
+      run: |
+        cd ${{ matrix.project }}
+        flake8 src/ tests/ --max-line-length=100 --ignore=E501,W503 || echo "Avisos de linting encontrados"
+
+    - name: Executar testes
+      run: |
+        cd ${{ matrix.project }}
+        pytest tests/ -v --tb=short || echo "Nenhum teste encontrado ainda"

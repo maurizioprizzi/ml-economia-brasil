@@ -1,0 +1,8 @@
+# Projeto 03 — Previsão de Desemprego com Causal ML
+# Inclui tudo do Projeto 01 mais EconML
+
+-r ../projeto-01-ipca/requirements.txt
+
+# --- Causal ML ---
+econml>=0.15.0          # Microsoft Research: Double ML, DML, causal forests
+dowhy>=0.10.0           # Causal reasoning framework (Microsoft)

@@ -1,0 +1,89 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Ambientes virtuais
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
+
+# Dados (não versionar dados brutos — use APIs para reproduzibilidade)
+*/data/raw/*.csv
+*/data/raw/*.parquet
+*/data/raw/*.xlsx
+*/data/raw/*.json
+*/data/processed/*.csv
+*/data/processed/*.parquet
+
+# Exceção: arquivos de exemplo pequenos podem ser versionados
+!*/data/raw/.gitkeep
+!*/data/processed/.gitkeep
+
+# Modelos treinados (podem ser grandes demais para o GitHub)
+*/models/*.pkl
+*/models/*.joblib
+*/models/*.h5
+*/models/*.pt
+
+# Relatórios gerados automaticamente
+*/reports/*.pdf
+*/reports/*.html
+!*/reports/.gitkeep
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Sistema operacional
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Variáveis de ambiente e secrets
+*.env
+.env.*
+secrets.toml
+config.local.yaml
