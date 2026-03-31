@@ -130,7 +130,7 @@ ml-economia-brasil/
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/SEU_USUARIO/ml-economia-brasil.git
+git clone https://github.com/maurizioprizzi/ml-economia-brasil.git
 cd ml-economia-brasil
 ```
 
@@ -154,7 +154,9 @@ Esta série é desenvolvida **um pouco a cada dia**, com commits regulares. Acom
 
 | Data | O que foi feito |
 |------|----------------|
-| Início | Estrutura do repositório e README principal |
+| 31/03/2025 | Estrutura completa do repositório, READMEs dos 3 projetos, `.gitignore`, `LICENSE`, `CONTRIBUTING.md`, `setup.sh` |
+| 31/03/2025 | CI corrigido: `requirements-ci.txt` leve, `fail-fast: false`, cache de pip no GitHub Actions |
+| 31/03/2025 | `requirements.txt` do projeto 01 revisado — versões atualizadas, organizado por fase de desenvolvimento |
 | ... | ... |
 
 ---
