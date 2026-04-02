@@ -154,6 +154,7 @@ Esta série é desenvolvida **um pouco a cada dia**, com commits regulares. Acom
 
 | Data | O que foi feito |
 |------|----------------|
+| 02/04/2026 | Notebook 01 concluído: coleta de 372 obs. mensais (1995–2025) via APIs do IBGE e BCB |
 | 31/03/2025 | Estrutura completa do repositório, READMEs dos 3 projetos, `.gitignore`, `LICENSE`, `CONTRIBUTING.md`, `setup.sh` |
 | 31/03/2025 | CI corrigido: `requirements-ci.txt` leve, `fail-fast: false`, cache de pip no GitHub Actions |
 | 31/03/2025 | `requirements.txt` do projeto 01 revisado — versões atualizadas, organizado por fase de desenvolvimento |
