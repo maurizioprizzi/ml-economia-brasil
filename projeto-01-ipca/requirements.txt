@@ -20,7 +20,7 @@
 requests>=2.31.0
 pandas>=2.2.0
 numpy>=1.26.0
-sidrapy>=0.1.5          # API do IBGE (SIDRA/SIDRAPY)
+sidrapy>=0.1.4          # API do IBGE (SIDRA/SIDRAPY)
 python-bcb>=0.2.0       # API do Banco Central do Brasil (SGS)
 ipeadatapy>=0.1.8       # API do Ipeadata
 
